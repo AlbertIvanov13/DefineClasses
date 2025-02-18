@@ -34,7 +34,7 @@ namespace CarManufacturer
 
         public void Drive(double distance)
         {
-            double fuel = FuelQuantity - distance * FuelConsumption / 100;
+            double fuel = this.FuelQuantity - this.FuelConsumption * distance;
             if (fuel < 0)
             {
                 Console.WriteLine("Not enough fuel to perform this trip!");
