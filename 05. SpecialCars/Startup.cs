@@ -59,12 +59,12 @@ namespace CarManufacturer
                 carInput = Console.ReadLine();
             }
 
-            foreach (Car car in cars.Where(c => c.Year >= 2017 && c.Engines[0].HorsePower > 330 && (c.Tires[0].Pressure >=9 && c.Tires[0].Pressure <= 10)))
+            foreach (Car car in cars.Where(c => c.Year >= 2017))
             {
                 car.FuelQuantity -= (car.FuelConsumption / 100) * 20;
             }
 
-            foreach (Car car in cars.Where(c => c.Year >= 2017 && c.Engines[0].HorsePower > 330 && (c.Tires[0].Pressure >= 9 && c.Tires[0].Pressure <= 10)))
+            foreach (Car car in cars.Where(c => c.Year >= 2017 && c.Engines.Any(e => e.HorsePower > 330) && c.Tires.Sum(tires => tires.Pressure) >= 9 && c.Tires.Sum(tires => tires.Pressure) <= 10))
             {
                 string result = $"Make: {car.Make}\n" +
                     $"Model: {car.Model}\n" +
