@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace CarManufacturer
 {
-    public class Tire
-    {
+	public class Tire
+	{
 		private int year;
 		private double pressure;
 
