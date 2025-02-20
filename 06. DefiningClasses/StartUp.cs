@@ -17,7 +17,11 @@
                 family.AddMember(person);
             }
 
-            Console.WriteLine($"{family.GetOldestMember().Name} {family.GetOldestMember().Age}");
+            var orderedPeople = family.People.Where(p => p.Age > 30).OrderBy(p => p.Name).ToList();
+            foreach (Person person in orderedPeople)
+            {
+                Console.WriteLine($"{person.Name} - {person.Age}");
+            }
         }
     }
 }
