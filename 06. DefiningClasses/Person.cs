@@ -14,16 +14,20 @@ namespace DefiningClasses
 
         public Person()
         {
-            this.Name = "Peter";
-            this.Age = 20;
+            this.Name = "No name";
+            this.Age = 1;
         }
 
-        public Person(string name, int age)
+        public Person(int age) : this()
+        {
+            this.Age = age;
+        }
+
+        public Person(string name, int age) : this(age)
         {
             this.Name = name;
             this.Age = age;
         }
-
 
         public string Name
         {
