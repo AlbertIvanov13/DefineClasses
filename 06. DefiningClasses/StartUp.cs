@@ -4,10 +4,20 @@
     {
         public static void Main(string[] args)
         {
-            Person person1 = new Person("Peter", 20);
+            int n = int.Parse(Console.ReadLine());
 
-            Console.WriteLine($"{person1.Name} {person1.Age}");
+            Family family = new Family();
+            for (int i = 0; i < n; i++)
+            {
+                string[] members = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries);
+                string name = members[0];
+                int age = int.Parse(members[1]);
+                Person person = new Person(name, age);
 
+                family.AddMember(person);
+            }
+
+            Console.WriteLine($"{family.GetOldestMember().Name} {family.GetOldestMember().Age}");
         }
     }
 }
